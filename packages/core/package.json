@@ -1,0 +1,76 @@
+{
+  "name": "@seo-builder/core",
+  "version": "0.1.0",
+  "description": "SEO Builder core — AI providers, SEO scoring, config, and shared utilities",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./ai": {
+      "types": "./dist/ai/index.d.ts",
+      "import": "./dist/ai/index.js",
+      "default": "./dist/ai/index.js"
+    },
+    "./seo": {
+      "types": "./dist/seo/index.d.ts",
+      "import": "./dist/seo/index.js",
+      "default": "./dist/seo/index.js"
+    },
+    "./config": {
+      "types": "./dist/config/index.d.ts",
+      "import": "./dist/config/index.js",
+      "default": "./dist/config/index.js"
+    },
+    "./api-response": {
+      "types": "./dist/api-response.d.ts",
+      "import": "./dist/api-response.js",
+      "default": "./dist/api-response.js"
+    },
+    "./validation": {
+      "types": "./dist/validation/index.d.ts",
+      "import": "./dist/validation/index.js",
+      "default": "./dist/validation/index.js"
+    }
+  },
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliWarraich33621013/SEO_Builder.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/AliWarraich33621013/SEO_Builder#readme",
+  "bugs": {
+    "url": "https://github.com/AliWarraich33621013/SEO_Builder/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.110.0",
+    "@google/generative-ai": "^0.24.1",
+    "openai": "^4.77.0",
+    "zod": "^3.25.76"
+  },
+  "peerDependencies": {
+    "next": ">=15.0.0"
+  },
+  "devDependencies": {
+    "next": "15.2.9",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "seo-builder-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SEO Builder — package-first monorepo",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm build:packages && pnpm generate:importmap && pnpm --filter demo-next-payload-app build",
+    "build:packages": "pnpm -r --filter \"./packages/*\" build",
+    "dev": "pnpm build:packages && pnpm --filter demo-next-payload-app dev",
+    "test": "vitest run",
+    "lint": "pnpm --filter demo-next-payload-app lint",
+    "generate:importmap": "pnpm --filter demo-next-payload-app generate:importmap",
+    "generate:types": "pnpm --filter demo-next-payload-app generate:types",
+    "publish:packages": "node scripts/publish-all.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.9"
+  },
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

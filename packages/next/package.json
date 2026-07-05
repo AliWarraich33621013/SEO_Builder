@@ -1,0 +1,147 @@
+{
+  "name": "@seo-builder/next",
+  "version": "0.1.0",
+  "description": "SEO Builder Next.js integration — blog routes, API handlers, sitemap, robots",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./sitemap": {
+      "types": "./dist/sitemap.d.ts",
+      "import": "./dist/sitemap.js",
+      "default": "./dist/sitemap.js"
+    },
+    "./robots": {
+      "types": "./dist/robots.d.ts",
+      "import": "./dist/robots.js",
+      "default": "./dist/robots.js"
+    },
+    "./routes/generate-title/route": {
+      "types": "./dist/routes/generate-title/route.d.ts",
+      "import": "./dist/routes/generate-title/route.js",
+      "default": "./dist/routes/generate-title/route.js"
+    },
+    "./routes/generate-outline/route": {
+      "types": "./dist/routes/generate-outline/route.d.ts",
+      "import": "./dist/routes/generate-outline/route.js",
+      "default": "./dist/routes/generate-outline/route.js"
+    },
+    "./routes/generate-meta-title/route": {
+      "types": "./dist/routes/generate-meta-title/route.d.ts",
+      "import": "./dist/routes/generate-meta-title/route.js",
+      "default": "./dist/routes/generate-meta-title/route.js"
+    },
+    "./routes/generate-meta-description/route": {
+      "types": "./dist/routes/generate-meta-description/route.d.ts",
+      "import": "./dist/routes/generate-meta-description/route.js",
+      "default": "./dist/routes/generate-meta-description/route.js"
+    },
+    "./routes/generate-meta/route": {
+      "types": "./dist/routes/generate-meta/route.d.ts",
+      "import": "./dist/routes/generate-meta/route.js",
+      "default": "./dist/routes/generate-meta/route.js"
+    },
+    "./routes/generate-slug/route": {
+      "types": "./dist/routes/generate-slug/route.d.ts",
+      "import": "./dist/routes/generate-slug/route.js",
+      "default": "./dist/routes/generate-slug/route.js"
+    },
+    "./routes/generate-faq/route": {
+      "types": "./dist/routes/generate-faq/route.d.ts",
+      "import": "./dist/routes/generate-faq/route.js",
+      "default": "./dist/routes/generate-faq/route.js"
+    },
+    "./routes/generate-excerpt/route": {
+      "types": "./dist/routes/generate-excerpt/route.d.ts",
+      "import": "./dist/routes/generate-excerpt/route.js",
+      "default": "./dist/routes/generate-excerpt/route.js"
+    },
+    "./routes/generate-alt-text/route": {
+      "types": "./dist/routes/generate-alt-text/route.d.ts",
+      "import": "./dist/routes/generate-alt-text/route.js",
+      "default": "./dist/routes/generate-alt-text/route.js"
+    },
+    "./routes/generate-social/route": {
+      "types": "./dist/routes/generate-social/route.d.ts",
+      "import": "./dist/routes/generate-social/route.js",
+      "default": "./dist/routes/generate-social/route.js"
+    },
+    "./routes/generate-social-captions/route": {
+      "types": "./dist/routes/generate-social-captions/route.d.ts",
+      "import": "./dist/routes/generate-social-captions/route.js",
+      "default": "./dist/routes/generate-social-captions/route.js"
+    },
+    "./routes/generate-content-brief/route": {
+      "types": "./dist/routes/generate-content-brief/route.d.ts",
+      "import": "./dist/routes/generate-content-brief/route.js",
+      "default": "./dist/routes/generate-content-brief/route.js"
+    },
+    "./routes/detect-search-intent/route": {
+      "types": "./dist/routes/detect-search-intent/route.d.ts",
+      "import": "./dist/routes/detect-search-intent/route.js",
+      "default": "./dist/routes/detect-search-intent/route.js"
+    },
+    "./routes/generate-cta/route": {
+      "types": "./dist/routes/generate-cta/route.d.ts",
+      "import": "./dist/routes/generate-cta/route.js",
+      "default": "./dist/routes/generate-cta/route.js"
+    },
+    "./routes/improve-readability/route": {
+      "types": "./dist/routes/improve-readability/route.d.ts",
+      "import": "./dist/routes/improve-readability/route.js",
+      "default": "./dist/routes/improve-readability/route.js"
+    },
+    "./routes/seo-score/route": {
+      "types": "./dist/routes/seo-score/route.d.ts",
+      "import": "./dist/routes/seo-score/route.js",
+      "default": "./dist/routes/seo-score/route.js"
+    },
+    "./routes/provider-info/route": {
+      "types": "./dist/routes/provider-info/route.d.ts",
+      "import": "./dist/routes/provider-info/route.js",
+      "default": "./dist/routes/provider-info/route.js"
+    }
+  },
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliWarraich33621013/SEO_Builder.git",
+    "directory": "packages/next"
+  },
+  "homepage": "https://github.com/AliWarraich33621013/SEO_Builder#readme",
+  "bugs": {
+    "url": "https://github.com/AliWarraich33621013/SEO_Builder/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@seo-builder/core": "workspace:*",
+    "@seo-builder/ui": "workspace:*"
+  },
+  "peerDependencies": {
+    "next": ">=15.0.0",
+    "payload": ">=3.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "next": "15.2.9",
+    "payload": "3.85.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

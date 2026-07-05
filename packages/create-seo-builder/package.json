@@ -1,0 +1,38 @@
+{
+  "name": "create-seo-builder",
+  "version": "0.1.0",
+  "description": "Scaffold SEO Builder route wrappers for existing Next.js + Payload projects",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "create-seo-builder": "./dist/index.js"
+  },
+  "files": ["dist", "templates"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliWarraich33621013/SEO_Builder.git",
+    "directory": "packages/create-seo-builder"
+  },
+  "homepage": "https://github.com/AliWarraich33621013/SEO_Builder#readme",
+  "bugs": {
+    "url": "https://github.com/AliWarraich33621013/SEO_Builder/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@seo-builder/core": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

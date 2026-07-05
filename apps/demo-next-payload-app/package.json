@@ -1,0 +1,52 @@
+{
+  "name": "demo-next-payload-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SEO Builder demo app — Next.js + Payload",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build",
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint .",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "seed": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/seed.ts",
+    "reset:admin": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/reset-admin.ts"
+  },
+  "dependencies": {
+    "@seo-builder/core": "workspace:*",
+    "@seo-builder/ui": "workspace:*",
+    "@seo-builder/payload-plugin": "workspace:*",
+    "@seo-builder/next": "workspace:*",
+    "@anthropic-ai/sdk": "^0.110.0",
+    "@google/generative-ai": "^0.24.1",
+    "@payloadcms/db-postgres": "3.85.2",
+    "@payloadcms/next": "3.85.2",
+    "@payloadcms/richtext-lexical": "3.85.2",
+    "@payloadcms/ui": "3.85.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
+    "graphql": "^16.8.1",
+    "next": "15.2.9",
+    "openai": "^4.77.0",
+    "payload": "3.85.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sharp": "^0.33.5",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "15.2.9",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build packages
+        run: pnpm -r --filter "./packages/*" build
+
+      - name: Generate import map
+        run: pnpm generate:importmap
+
+      - name: Typecheck demo
+        run: pnpm exec tsc --noEmit -p apps/demo-next-payload-app/tsconfig.json
+
+      - name: Build demo
+        run: pnpm --filter demo-next-payload-app build

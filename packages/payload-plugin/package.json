@@ -1,0 +1,66 @@
+{
+  "name": "@seo-builder/payload-plugin",
+  "version": "0.1.0",
+  "description": "SEO Builder Payload CMS plugin — collections, globals, admin AI panel",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./components/admin/AiAssistantPanel": {
+      "types": "./dist/components/admin/AiAssistantPanel.d.ts",
+      "import": "./dist/components/admin/AiAssistantPanel.js",
+      "default": "./dist/components/admin/AiAssistantPanel.js"
+    },
+    "./graphics/Logo": {
+      "types": "./dist/graphics/Logo/index.d.ts",
+      "import": "./dist/graphics/Logo/index.js",
+      "default": "./dist/graphics/Logo/index.js"
+    },
+    "./graphics/Icon": {
+      "types": "./dist/graphics/Icon/index.d.ts",
+      "import": "./dist/graphics/Icon/index.js",
+      "default": "./dist/graphics/Icon/index.js"
+    }
+  },
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliWarraich33621013/SEO_Builder.git",
+    "directory": "packages/payload-plugin"
+  },
+  "homepage": "https://github.com/AliWarraich33621013/SEO_Builder#readme",
+  "bugs": {
+    "url": "https://github.com/AliWarraich33621013/SEO_Builder/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@seo-builder/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "payload": ">=3.0.0",
+    "@payloadcms/ui": ">=3.0.0",
+    "@payloadcms/richtext-lexical": ">=3.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "payload": "3.85.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

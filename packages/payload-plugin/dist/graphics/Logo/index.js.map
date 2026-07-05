@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/graphics/Logo/index.tsx"],"sourcesContent":["import React from 'react'\n\nexport const Logo = () => (\n  <div style={{ fontWeight: 700, fontSize: '1.25rem', letterSpacing: '-0.02em' }}>\n    SEO Builder\n  </div>\n)\n"],"mappings":";AAGE;AADK,IAAM,OAAO,MAClB,oBAAC,SAAI,OAAO,EAAE,YAAY,KAAK,UAAU,WAAW,eAAe,UAAU,GAAG,yBAEhF;","names":[]}
