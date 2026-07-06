@@ -57,13 +57,14 @@ pnpm dev
 
 ## Deploy to Vercel
 
-1. Push this repo to GitHub
-2. [Vercel](https://vercel.com) → Import project
+1. Push this repo to GitHub: [AliWarraich33621013/SEO_Builder](https://github.com/AliWarraich33621013/SEO_Builder)
+2. [Vercel](https://vercel.com) → Import project from `https://github.com/AliWarraich33621013/SEO_Builder`
 3. **Root Directory:** `apps/demo-next-payload-app`
 4. Add env vars (see [DEPLOYMENT.md](./DEPLOYMENT.md)):
    - `DATABASE_URI` — [Neon](https://neon.tech) Postgres connection string
    - `PAYLOAD_SECRET` — random 32+ char string
    - `NEXT_PUBLIC_SITE_URL` — your Vercel URL
+   - `NEXT_PUBLIC_GITHUB_REPO` — `https://github.com/AliWarraich33621013/SEO_Builder`
    - `GEMINI_API_KEY` — for AI features
 5. Deploy
 

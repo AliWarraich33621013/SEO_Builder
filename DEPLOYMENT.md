@@ -60,8 +60,8 @@ Run `generate:importmap` after changing admin UI components in the payload plugi
 
 ## Vercel (live demo + landing page)
 
-1. Push repo to GitHub
-2. [Vercel](https://vercel.com) → **Add New Project** → import repo
+1. Push repo to GitHub: [AliWarraich33621013/SEO_Builder](https://github.com/AliWarraich33621013/SEO_Builder)
+2. [Vercel](https://vercel.com) → **Add New Project** → import `https://github.com/AliWarraich33621013/SEO_Builder`
 3. **Root Directory:** `apps/demo-next-payload-app`
 4. `vercel.json` configures pnpm install + monorepo build automatically
 5. Set environment variables:
@@ -73,7 +73,7 @@ Run `generate:importmap` after changing admin UI components in the payload plugi
 | `NEXT_PUBLIC_SITE_URL` | Yes | `https://your-project.vercel.app` |
 | `AI_PROVIDER` | For AI | `gemini` |
 | `GEMINI_API_KEY` | For AI | [Google AI Studio](https://aistudio.google.com/apikey) |
-| `NEXT_PUBLIC_GITHUB_REPO` | Optional | GitHub URL for docs links on `/` |
+| `NEXT_PUBLIC_GITHUB_REPO` | Recommended | `https://github.com/AliWarraich33621013/SEO_Builder` |
 
 6. Deploy → test `/` (product landing), `/blog`, `/seo-admin`
 

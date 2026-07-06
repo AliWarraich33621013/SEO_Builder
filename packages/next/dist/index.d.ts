@@ -48,8 +48,8 @@ declare function createQueryHelpers(payloadConfig: PayloadConfigInput$1): {
     getAllAuthors: () => Promise<payload.PaginatedDocs<payload.JsonObject & payload.TypeWithID>>;
     getAllPublishedPostSlugs: () => Promise<payload.PaginatedDocs<{
         slug: unknown;
-        id: string | number;
         updatedAt: unknown;
+        id: string | number;
     }>>;
 };
 type QueryHelpers = ReturnType<typeof createQueryHelpers>;

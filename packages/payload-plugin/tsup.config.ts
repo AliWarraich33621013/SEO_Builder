@@ -11,6 +11,7 @@ export default defineConfig({
   dts: true,
   clean: true,
   sourcemap: true,
+  tsconfig: 'tsconfig.json',
   external: [
     'payload',
     '@payloadcms/ui',

@@ -49,6 +49,7 @@
     "@seo-builder/core": "workspace:*"
   },
   "peerDependencies": {
+    "@seo-builder/core": ">=0.1.0",
     "payload": ">=3.0.0",
     "@payloadcms/ui": ">=3.0.0",
     "@payloadcms/richtext-lexical": ">=3.0.0",
@@ -56,7 +57,12 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
+    "@payloadcms/ui": "3.85.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "payload": "3.85.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   },

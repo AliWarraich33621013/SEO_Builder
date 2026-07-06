@@ -11,8 +11,8 @@ Run the demo app in about 10 minutes.
 ## 1. Install
 
 ```bash
-git clone <your-repo-url>
-cd SEO_AI
+git clone https://github.com/AliWarraich33621013/SEO_Builder.git
+cd SEO_Builder
 pnpm install
 ```
 
