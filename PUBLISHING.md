@@ -22,6 +22,7 @@ From monorepo root, after tests pass:
 ```bash
 pnpm install
 pnpm test
+pnpm check:publish
 pnpm publish:packages
 ```
 
@@ -46,7 +47,8 @@ This runs `scripts/publish-all.mjs` which:
 
 1. Verifies `npm whoami`
 2. Builds packages in order: core → ui → payload-plugin → next → create-seo-builder
-3. Publishes each with `npm publish --access public`
+3. Runs `check:publish` (fails if any package contains `workspace:`, `link:`, or `file:`)
+4. Publishes each with `npm publish --access public`
 
 ## Manual publish (per package)
 
@@ -75,8 +77,14 @@ Search: https://www.npmjs.com/search?q=%40seo-builder
 ## Install in a client project
 
 ```bash
-pnpm add @seo-builder/core @seo-builder/payload-plugin @seo-builder/ui @seo-builder/next
-pnpm create seo-builder .
+npm install @seo-builder/core @seo-builder/payload-plugin @seo-builder/ui @seo-builder/next
+npx create-seo-builder@latest .
+```
+
+Or:
+
+```bash
+npm create seo-builder@latest .
 ```
 
 See [PACKAGE_INSTALLATION.md](./PACKAGE_INSTALLATION.md).
@@ -88,7 +96,7 @@ See [PACKAGE_INSTALLATION.md](./PACKAGE_INSTALLATION.md).
 
 ## Version bumps
 
-All packages ship at **0.1.0** for the initial release. For updates, bump version in each `packages/*/package.json` (or add Changesets later) before publishing.
+All packages ship at **0.1.1** for this release. For updates, bump version in each `packages/*/package.json` (or add Changesets later) before publishing.
 
 ## What gets published
 
@@ -98,6 +106,8 @@ Only `dist/` (and `templates/` for create-seo-builder). Source, tests, and demo 
 
 | Error | Fix |
 |-------|-----|
+| `EUNSUPPORTEDPROTOCOL workspace:` | Run `pnpm check:publish` — replace `workspace:*` with `^x.y.z` in `packages/*/package.json` before publishing |
+| `EOTP` / 2FA | Set `NPM_OTP` env var with authenticator code |
 | `402 Payment Required` on scoped package | Use `--access public` |
 | `403 Forbidden` | Enable 2FA; use publish token |
 | `You cannot publish over the previously published versions` | Bump version in package.json |

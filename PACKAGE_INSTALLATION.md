@@ -10,15 +10,21 @@ Add SEO Builder to an **existing** Next.js 15 + Payload CMS 3 project.
 | `@seo-builder/payload-plugin` | Collections, globals, admin AI panel |
 | `@seo-builder/ui` | Public blog components + theme |
 | `@seo-builder/next` | API routes, sitemap, robots, query helpers |
-| `create-seo-builder` | Scaffold thin route wrappers (optional) |
+| `create-seo-builder` | Add-on scaffolder for route wrappers in an **existing** Next.js + Payload project (not a full app generator) |
 
 ## Step 1 — Install packages
 
 ```bash
-pnpm add @seo-builder/core @seo-builder/payload-plugin @seo-builder/ui @seo-builder/next
+npm install @seo-builder/core @seo-builder/payload-plugin @seo-builder/ui @seo-builder/next
 ```
 
-For local monorepo development, use `workspace:*` in a pnpm workspace instead.
+Optional scaffold for route wrappers (run inside your project root — does **not** create a full app):
+
+```bash
+npx create-seo-builder@latest .
+```
+
+For local monorepo development only, use `workspace:*` in a pnpm workspace instead of npm versions.
 
 ## Step 2 — Transpile packages
 

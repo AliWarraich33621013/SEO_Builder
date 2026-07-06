@@ -19,7 +19,7 @@ Set `NEXT_PUBLIC_SITE_URL` to your deployment URL (e.g. `https://your-app.vercel
 | `@seo-builder/payload-plugin` | `pnpm add @seo-builder/payload-plugin` |
 | `@seo-builder/ui` | `pnpm add @seo-builder/ui` |
 | `@seo-builder/next` | `pnpm add @seo-builder/next` |
-| `create-seo-builder` | `pnpm create seo-builder` |
+| `create-seo-builder` | `npx create-seo-builder@latest .` (add-on for existing Next.js + Payload projects) |
 
 ```bash
 pnpm add @seo-builder/core @seo-builder/payload-plugin @seo-builder/ui @seo-builder/next
@@ -46,7 +46,19 @@ SEO_AI/
 - Public `/blog` with schema, sitemap, robots
 - Theming via `seo-builder.config.ts`
 
-## Quick start (monorepo)
+## Quick start (add SEO Builder to an existing Next.js + Payload app)
+
+`create-seo-builder` is an **add-on scaffolder** — it does not create a full app.
+
+```bash
+cd my-existing-next-payload-app
+npx create-seo-builder@latest .
+npm install @seo-builder/core @seo-builder/payload-plugin @seo-builder/ui @seo-builder/next
+```
+
+See [PACKAGE_INSTALLATION.md](./PACKAGE_INSTALLATION.md) for full setup.
+
+## Quick start (monorepo contributors)
 
 ```bash
 pnpm install
@@ -92,6 +104,7 @@ pnpm dev
 | `pnpm dev` | Build packages + start demo |
 | `pnpm build` | Build packages + demo |
 | `pnpm test` | Run tests |
+| `pnpm check:publish` | Verify published packages have no workspace:/link:/file: deps |
 | `pnpm publish:packages` | Publish all packages to npm |
 | `pnpm --filter demo-next-payload-app db:setup` | One-time Payload Postgres migration (Neon/production) |
 | `pnpm --filter demo-next-payload-app seed` | Optional idempotent demo blog content |

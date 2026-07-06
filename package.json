@@ -13,7 +13,8 @@
     "lint": "pnpm --filter demo-next-payload-app lint",
     "generate:importmap": "pnpm --filter demo-next-payload-app generate:importmap",
     "generate:types": "pnpm --filter demo-next-payload-app generate:types",
-    "publish:packages": "node scripts/publish-all.mjs"
+    "check:publish": "node scripts/check-publish.mjs",
+    "publish:packages": "node scripts/check-publish.mjs && node scripts/publish-all.mjs"
   },
   "devDependencies": {
     "typescript": "^5.7.2",
@@ -22,6 +23,14 @@
   "engines": {
     "node": ">=20.9.0",
     "pnpm": ">=9.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@seo-builder/core": "workspace:*",
+      "@seo-builder/ui": "workspace:*",
+      "@seo-builder/payload-plugin": "workspace:*",
+      "@seo-builder/next": "workspace:*"
+    }
   },
   "packageManager": "pnpm@9.15.4"
 }

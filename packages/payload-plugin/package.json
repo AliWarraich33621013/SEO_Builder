@@ -1,6 +1,6 @@
 {
   "name": "@seo-builder/payload-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SEO Builder Payload CMS plugin — collections, globals, admin AI panel",
   "license": "MIT",
   "type": "module",
@@ -46,10 +46,10 @@
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
-    "@seo-builder/core": "workspace:*"
+    "@seo-builder/core": "^0.1.1"
   },
   "peerDependencies": {
-    "@seo-builder/core": ">=0.1.0",
+    "@seo-builder/core": ">=0.1.1",
     "payload": ">=3.0.0",
     "@payloadcms/ui": ">=3.0.0",
     "@payloadcms/richtext-lexical": ">=3.0.0",

@@ -43,6 +43,8 @@ for (const pkg of packages) {
   }
 }
 
+run('node scripts/check-publish.mjs')
+
 console.log('\n🚀 Publishing to npm (public)...')
 const otpFlag = process.env.NPM_OTP ? `--otp=${process.env.NPM_OTP}` : ''
 for (const pkg of packages) {
@@ -50,6 +52,6 @@ for (const pkg of packages) {
   run(`npm publish --access public ${otpFlag}`.trim(), dir)
 }
 
-console.log('\n✅ All packages published at 0.1.0')
+console.log('\n✅ All packages published at 0.1.1')
 console.log('   https://www.npmjs.com/package/@seo-builder/core')
 console.log('   https://www.npmjs.com/package/create-seo-builder')

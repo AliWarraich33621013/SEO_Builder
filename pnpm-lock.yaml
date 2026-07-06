@@ -4,6 +4,12 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@seo-builder/core': workspace:*
+  '@seo-builder/ui': workspace:*
+  '@seo-builder/payload-plugin': workspace:*
+  '@seo-builder/next': workspace:*
+
 importers:
 
   .:
@@ -135,10 +141,6 @@ importers:
         version: 5.9.3
 
   packages/create-seo-builder:
-    dependencies:
-      '@seo-builder/core':
-        specifier: workspace:*
-        version: link:../core
     devDependencies:
       tsup:
         specifier: ^8.3.5
