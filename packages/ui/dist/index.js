@@ -1,7 +1,9 @@
 import {
-  __require,
   seoBuilderCssVars
-} from "./chunk-M7B7JJUA.js";
+} from "./chunk-JIOUIJTY.js";
+
+// src/index.tsx
+import { RichText as PayloadRichText } from "@payloadcms/richtext-lexical/react";
 
 // src/ThemeProvider.tsx
 import { jsx } from "react/jsx-runtime";
@@ -137,7 +139,6 @@ function PostList({ children }) {
 }
 function RichText({ content }) {
   if (!content) return null;
-  const { RichText: PayloadRichText } = __require("@payloadcms/richtext-lexical/react");
   return /* @__PURE__ */ jsx2("div", { className: "prose prose-slate max-w-none", children: /* @__PURE__ */ jsx2(PayloadRichText, { data: content }) });
 }
 function BlogCTA({

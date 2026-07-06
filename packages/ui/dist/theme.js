@@ -1,6 +1,6 @@
 import {
   seoBuilderCssVars
-} from "./chunk-M7B7JJUA.js";
+} from "./chunk-JIOUIJTY.js";
 export {
   seoBuilderCssVars
 };

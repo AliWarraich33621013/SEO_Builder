@@ -1,4 +1,7 @@
-import type { ComponentType, ReactNode } from 'react'
+import type { ComponentProps, ReactNode } from 'react'
+import { RichText as PayloadRichText } from '@payloadcms/richtext-lexical/react'
+
+type PayloadRichTextData = ComponentProps<typeof PayloadRichText>['data']
 
 type JsonLdProps = {
   data: Record<string, unknown> | Record<string, unknown>[] | null
@@ -231,14 +234,9 @@ export function PostList({ children }: { children: ReactNode }) {
 export function RichText({ content }: { content: unknown }) {
   if (!content) return null
 
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const { RichText: PayloadRichText } = require('@payloadcms/richtext-lexical/react') as {
-    RichText: ComponentType<{ data: unknown }>
-  }
-
   return (
     <div className="prose prose-slate max-w-none">
-      <PayloadRichText data={content} />
+      <PayloadRichText data={content as PayloadRichTextData} />
     </div>
   )
 }
