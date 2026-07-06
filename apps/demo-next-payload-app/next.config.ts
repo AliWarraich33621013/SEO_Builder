@@ -31,4 +31,11 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default withPayload(nextConfig, { devBundleServerPackages: false })
+const payloadConfig = withPayload(nextConfig, { devBundleServerPackages: false })
+
+// Next.js 15 does not support top-level `turbopack`; @payloadcms/next adds it for Next 16+.
+const { turbopack: _turbopack, ...configForNext15 } = payloadConfig as NextConfig & {
+  turbopack?: unknown
+}
+
+export default configForNext15

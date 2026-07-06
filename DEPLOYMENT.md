@@ -79,6 +79,57 @@ Run `generate:importmap` after changing admin UI components in the payload plugi
 
 **Neon (free DB):** Create project → copy connection string → paste as `DATABASE_URI`.
 
+### Initialize Neon database before using Vercel demo
+
+Vercel builds succeed even when Neon has no Payload tables. You must run migrations **once** against Neon before `/seo-admin` and `/blog` work.
+
+1. Copy your Neon `DATABASE_URI` (must include `?sslmode=require`)
+2. Put `DATABASE_URI` and `PAYLOAD_SECRET` in local `.env` or temporary PowerShell env vars
+3. Run database setup:
+
+```bash
+pnpm --filter demo-next-payload-app db:setup
+```
+
+4. Optional demo content:
+
+```bash
+pnpm --filter demo-next-payload-app seed
+```
+
+5. Create an admin user:
+
+```bash
+pnpm --filter demo-next-payload-app reset:admin
+```
+
+6. Confirm migrations ran:
+
+```bash
+pnpm --filter demo-next-payload-app migrate:status
+```
+
+7. Refresh your Vercel deployment — **no redeploy required** (tables live in Neon)
+8. Open `/seo-admin` and `/blog`
+
+**PowerShell example:**
+
+```powershell
+cd apps\demo-next-payload-app
+$env:DATABASE_URI = "postgresql://USER:PASS@HOST/neondb?sslmode=require"
+$env:PAYLOAD_SECRET = "your-vercel-payload-secret"
+pnpm db:setup
+pnpm seed          # optional demo content
+pnpm reset:admin   # creates admin@seobuilder.local
+pnpm migrate:status
+```
+
+**Important:**
+- Do not commit `.env` or Neon credentials
+- Production DB setup is one-time (safe to re-run; pending migrations only)
+- Do **not** run `migrate:fresh`, `migrate:reset`, or `migrate:refresh` on production
+- After schema changes in development, generate new migrations with `pnpm --filter demo-next-payload-app migrate:create <name>`
+
 **Custom domain:** Vercel Domains → add DNS records → update `NEXT_PUBLIC_SITE_URL` → redeploy.
 
 **Note:** In-memory rate limiting resets per serverless invocation. See [SECURITY.md](./SECURITY.md).
@@ -113,6 +164,8 @@ Client apps need `transpilePackages` for all `@seo-builder/*` in `next.config.ts
 
 | Issue | Fix |
 |-------|-----|
+| `/seo-admin/login` → `relation "users" does not exist` | Run `pnpm --filter demo-next-payload-app db:setup` against Neon, then `pnpm --filter demo-next-payload-app reset:admin` |
+| `/blog` → `relation "site_settings" does not exist` | Run `pnpm --filter demo-next-payload-app db:setup` against Neon (see [Initialize Neon database](#initialize-neon-database-before-using-vercel-demo)) |
 | Workspace package not found in CI | Install from monorepo root with pnpm |
 | Admin component missing | `pnpm generate:importmap` + rebuild |
 | Wrong blog URLs | `seo-builder.config.ts` + SEO Settings site URL |

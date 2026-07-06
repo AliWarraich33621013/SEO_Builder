@@ -12,6 +12,10 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint .",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "db:setup": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
+    "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
+    "migrate:status": "cross-env NODE_OPTIONS=--no-deprecation payload migrate:status",
+    "migrate:create": "cross-env NODE_OPTIONS=--no-deprecation payload migrate:create",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
     "seed": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/seed.ts",
     "reset:admin": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/reset-admin.ts"
@@ -44,6 +48,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint": "^9.16.0",
+    "@eslint/eslintrc": "^3.3.5",
     "eslint-config-next": "15.2.9",
     "tailwindcss": "^4.0.0",
     "tsx": "^4.19.2",

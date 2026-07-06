@@ -67,6 +67,7 @@ pnpm dev
    - `NEXT_PUBLIC_GITHUB_REPO` — `https://github.com/AliWarraich33621013/SEO_Builder`
    - `GEMINI_API_KEY` — for AI features
 5. Deploy
+6. **Initialize Neon database** — see [DEPLOYMENT.md](./DEPLOYMENT.md#initialize-neon-database-before-using-vercel-demo)
 
 `vercel.json` in the demo app runs `pnpm build` from the monorepo root.
 
@@ -92,6 +93,9 @@ pnpm dev
 | `pnpm build` | Build packages + demo |
 | `pnpm test` | Run tests |
 | `pnpm publish:packages` | Publish all packages to npm |
+| `pnpm --filter demo-next-payload-app db:setup` | One-time Payload Postgres migration (Neon/production) |
+| `pnpm --filter demo-next-payload-app seed` | Optional idempotent demo blog content |
+| `pnpm --filter demo-next-payload-app reset:admin` | Create or reset admin user |
 
 ## License
 
